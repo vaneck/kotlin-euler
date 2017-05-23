@@ -9,6 +9,5 @@ fun p1(): Int {
 }
 
 fun p2(): Int {
-    // Placeholder.
-    return 0
+    return fibonacci().filter({n -> n % 2 == 0}).takeWhile({n -> n < 4_000_000}).sum()
 }

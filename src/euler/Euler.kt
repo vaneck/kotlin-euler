@@ -9,7 +9,7 @@ fun main(args: Array<String>) {
     var answer: Int
     for (problem in problems) {
         answer = problem()
-        println("Output of $problem: $answer.")
+        println("Output of ${problem.name}: $answer.")
     }
 }
 

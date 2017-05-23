@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/kotlin-euler.iml" filepath="$PROJECT_DIR$/kotlin-euler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-euler_main.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-euler_main.iml" group="kotlin-euler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin-euler_test.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin-euler_test.iml" group="kotlin-euler" />
     </modules>
   </component>
 </project>

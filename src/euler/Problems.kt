@@ -18,3 +18,7 @@ fun p3(): Long {
     val n = 600851475143L
     return factorize(n).last()
 }
+
+fun p4(): Long {
+    return 0L;
+}

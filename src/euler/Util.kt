@@ -26,7 +26,7 @@ fun naturalsFromGenerator() = buildSequence {
 fun factorize(n: Long): MutableList<Long> {
     // naive factorization.
     var number: Long = n
-    var factors: MutableList<Long> = mutableListOf()
+    val factors: MutableList<Long> = mutableListOf()
     for (factor in 2..n) {
         if (factor > number) {
             return factors
@@ -40,3 +40,13 @@ fun factorize(n: Long): MutableList<Long> {
 }
 
 fun version(): String = kotlin.KotlinVersion.CURRENT.toString()
+
+fun isPalindrome(s: String): Boolean {
+    var s2 = s.reversed()
+    for (i in 0..(s.length/2)) {
+        if (s[i] != s2[i]) {
+            return false
+        }
+    }
+    return true
+}

@@ -9,5 +9,12 @@ fun p1(): Int {
 }
 
 fun p2(): Int {
-    return fibonacci().filter({n -> n % 2 == 0}).takeWhile({n -> n < 4_000_000}).sum()
+    return fibonacci().filter({it % 2 == 0}).takeWhile({it < 4_000_000}).sum()
+}
+
+
+fun p3(): Long {
+    // largest prime factor of 600851475143.
+    val n = 600851475143L
+    return factorize(n).last()
 }

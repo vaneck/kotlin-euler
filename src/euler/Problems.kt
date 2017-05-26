@@ -36,7 +36,7 @@ fun p4(): Long {
 
 fun p5(): Long {
     for (n: Long in generateSequence(6L, { it + 6L })) {
-        if (generateSequence(4L, { it + 1 }).takeWhile({ it <= 20}).all({ n.rem(it) == 0L })) {
+        if ((4..20).all({ n.rem(it) == 0L })) {
             return n
         }
     }

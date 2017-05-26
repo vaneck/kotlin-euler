@@ -20,5 +20,14 @@ fun p3(): Long {
 }
 
 fun p4(): Long {
-    return 0L;
+    var palindromes: MutableList<Long> = mutableListOf()
+    for (n in 100L..999L) {
+        for (m in n..999L) {
+            var product = n*m
+            if (isPalindrome(product.toString())) {
+               palindromes.add(product)
+            }
+        }
+    }
+    return palindromes.max() ?: 0
 }

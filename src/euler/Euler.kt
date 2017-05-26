@@ -5,7 +5,8 @@ import kotlin.reflect.*
 val problems = listOf(
         ::p1,
         ::p2,
-        ::p3
+        ::p3,
+        ::p4
 )
 
 fun main(args: Array<String>) {

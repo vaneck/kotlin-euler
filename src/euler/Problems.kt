@@ -1,5 +1,7 @@
 package euler
 
+import kotlin.coroutines.experimental.*
+
 fun p1(): Int {
     var acc = 0
     for (n in 1..1000) {
@@ -30,4 +32,13 @@ fun p4(): Long {
         }
     }
     return palindromes.max() ?: 0
+}
+
+fun p5(): Long {
+    for (n: Long in generateSequence(6L, { it + 6L })) {
+        if (generateSequence(4L, { it + 1 }).takeWhile({ it <= 20}).all({ n.rem(it) == 0L })) {
+            return n
+        }
+    }
+    return 0
 }

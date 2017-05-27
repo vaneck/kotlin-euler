@@ -1,16 +1,11 @@
 package euler
 
-import kotlin.coroutines.experimental.buildSequence
-
-fun fetchProblemDescription(): String {
-    return "Not implemented."
-}
-
 fun fibonacci(): Sequence<Int> {
     // Stolen from somewhere because I didn't know how to use generateSequence yet.
     return generateSequence(Pair(0, 1), { Pair(it.second, it.first + it.second) }).map { it.first }
 }
 
+/*
 fun naturals(): Sequence<Int> {
     return generateSequence(1, {it + 1})
 }
@@ -22,6 +17,7 @@ fun naturalsFromGenerator() = buildSequence {
         n+=1
     }
 }
+*/
 
 fun factorize(n: Long): MutableList<Long> {
     // naive factorization.
@@ -33,7 +29,7 @@ fun factorize(n: Long): MutableList<Long> {
         }
         if (number.rem(factor) == 0L) {
             factors.add(factor)
-            number = number/factor
+            number /= factor
         }
     }
     return factors
@@ -42,7 +38,7 @@ fun factorize(n: Long): MutableList<Long> {
 fun version(): String = kotlin.KotlinVersion.CURRENT.toString()
 
 fun isPalindrome(s: String): Boolean {
-    var s2 = s.reversed()
+    val s2 = s.reversed()
     for (i in 0..(s.length/2)) {
         if (s[i] != s2[i]) {
             return false

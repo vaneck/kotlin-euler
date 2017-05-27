@@ -1,6 +1,6 @@
 package euler
 
-import kotlin.coroutines.experimental.*
+import com.google.common.math.LongMath
 
 fun p1(): Int {
     var acc = 0
@@ -22,10 +22,10 @@ fun p3(): Long {
 }
 
 fun p4(): Long {
-    var palindromes: MutableList<Long> = mutableListOf()
+    val palindromes: MutableList<Long> = mutableListOf()
     for (n in 100L..999L) {
         for (m in n..999L) {
-            var product = n*m
+            val product = n*m
             if (isPalindrome(product.toString())) {
                palindromes.add(product)
             }
@@ -41,4 +41,13 @@ fun p5(): Long {
         }
     }
     return 0
+}
+
+/**
+ * Sum square difference.
+ */
+fun p6(): Long {
+    val sumOfSquares = (1..100L).map {it * it}.sum()
+    val squareOfSums = LongMath.pow((1..100L).sum(), 2)
+    return squareOfSums - sumOfSquares
 }

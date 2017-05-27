@@ -1,13 +1,12 @@
 package euler
 
-import kotlin.reflect.*
-
 val problems = listOf(
         ::p1,
         ::p2,
         ::p3,
         ::p4,
-        ::p5
+        ::p5,
+        ::p6
 )
 
 fun main(args: Array<String>) {

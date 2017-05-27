@@ -51,9 +51,9 @@ class Sieve {
     fun _resize(n: Int) {
         val delta = n - _sieve.size
         if (delta >= 0) {
-            _sieve.addAll(generateSequence({ true }, { true }).take(delta))
+            _sieve.addAll((0..delta-1).map({true}))
         } else {
-            _sieve = _sieve.slice(0..n).toMutableList()
+            _sieve = _sieve.slice(0..n-1).toMutableList()
         }
     }
 

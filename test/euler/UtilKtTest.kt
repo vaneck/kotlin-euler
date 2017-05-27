@@ -20,4 +20,8 @@ internal class UtilKtTest {
         Assertions.assertFalse(isPalindrome("12341234"), "12341234")
     }
 
+    @Test fun nthPrime() {
+        Assertions.assertEquals(13, nthPrime(6))
+    }
+
 }

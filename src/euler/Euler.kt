@@ -6,16 +6,16 @@ val problems = listOf(
         ::p3,
         ::p4,
         ::p5,
-        ::p6
+        ::p6,
+        ::p7
 )
 
 fun main(args: Array<String>) {
     println("Kotlin version: ${version()}")
-    var answer: Any
     for (problem in problems) {
-        println("Problem name: ${problem.name}")
-        answer = problem()
-        println("Output of ${problem.name}: $answer.")
+        println("==========================================")
+        println("Euler problem: ${problem.name}")
+        println("Answer to ${problem.name}: ${problem()}.")
     }
 }
 

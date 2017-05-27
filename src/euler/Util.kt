@@ -46,3 +46,19 @@ fun isPalindrome(s: String): Boolean {
     }
     return true
 }
+
+fun nthPrime(n: Int): Int {
+    var sieve = Sieve()
+    // Not strictly needed as the sieve auto-resizes.
+    sieve.size = 1000000
+
+    var count = 0
+    var num = 0
+    while (count < n) {
+        num++
+        if (sieve.isPrime(num)) {
+            count++
+        }
+    }
+    return num
+}

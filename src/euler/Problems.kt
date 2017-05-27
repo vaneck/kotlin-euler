@@ -51,3 +51,10 @@ fun p6(): Long {
     val squareOfSums = LongMath.pow((1..100L).sum(), 2)
     return squareOfSums - sumOfSquares
 }
+
+/**
+ * 10001st prime number.
+ */
+fun p7(): Int {
+    return nthPrime(10001)
+}

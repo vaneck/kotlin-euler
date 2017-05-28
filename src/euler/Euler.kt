@@ -1,5 +1,7 @@
 package euler
 
+import kotlin.system.measureTimeMillis
+
 val problems = listOf(
         ::p1,
         ::p2,
@@ -7,7 +9,8 @@ val problems = listOf(
         ::p4,
         ::p5,
         ::p6,
-        ::p7
+        ::p7,
+        ::p8
 )
 
 fun main(args: Array<String>) {
@@ -15,7 +18,10 @@ fun main(args: Array<String>) {
     for (problem in problems) {
         println("==========================================")
         println("Euler problem: ${problem.name}")
-        println("Answer to ${problem.name}: ${problem()}.")
+        var answer: Any = 0
+        var time = measureTimeMillis({answer = problem()})
+        println("Answer to ${problem.name}: ${answer}.")
+        println("Took ${time}ms.")
     }
 }
 

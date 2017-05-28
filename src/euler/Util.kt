@@ -70,3 +70,12 @@ fun generateSubstrings(s: String, substringLength: Int): Sequence<String> = buil
         yield(s.slice(i..i+substringLength - 1))
     }
 }
+
+/**
+ * Multiplies digits in a string together.
+ * e.g. "123" -> 6
+ */
+fun stringProduct(l: String): Int {
+    return l.map{it.toString().toInt()} // char's toInt() returns ascii value.
+           .reduce {n1, n2 -> n1 * n2}
+}

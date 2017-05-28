@@ -35,4 +35,8 @@ internal class UtilKtTest {
         assertEquals(emptyList<String>(), generateSubstrings(s, 7).toList())
     }
 
+    @Test fun stringProduct() {
+        var s = "1234"
+        assertEquals(listOf(2, 6, 12), generateSubstrings(s, 2).map{ stringProduct(it)}.toList())
+    }
 }

@@ -1,5 +1,7 @@
 package euler
 
+import kotlin.coroutines.experimental.buildSequence
+
 fun fibonacci(): Sequence<Int> {
     // Stolen from somewhere because I didn't know how to use generateSequence yet.
     return generateSequence(Pair(0, 1), { Pair(it.second, it.first + it.second) }).map { it.first }
@@ -48,7 +50,7 @@ fun isPalindrome(s: String): Boolean {
 }
 
 fun nthPrime(n: Int): Int {
-    var sieve = Sieve()
+    val sieve = Sieve()
     // Not strictly needed as the sieve auto-resizes.
     sieve.size = 1000000
 
@@ -61,4 +63,10 @@ fun nthPrime(n: Int): Int {
         }
     }
     return num
+}
+
+fun generateSubstrings(s: String, substringLength: Int): Sequence<String> = buildSequence {
+    for (i in 0..s.length - substringLength) {
+        yield(s.slice(i..i+substringLength - 1))
+    }
 }

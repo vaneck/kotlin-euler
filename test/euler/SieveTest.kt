@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 internal class SieveTest {
 
     @Test fun autoResize() {
-        var sieve = Sieve()
+        val sieve = Sieve()
         for (n in listOf(2, 17, 37, 89, 97)) {
             Assertions.assertTrue(sieve.isPrime(n), "$n")
         }
@@ -16,7 +16,7 @@ internal class SieveTest {
     }
 
     @Test fun manualResize() {
-        var sieve = Sieve()
+        val sieve = Sieve()
         sieve.size = 1000
         for (n in listOf(2, 17, 37, 89, 97)) {
             Assertions.assertTrue(sieve.isPrime(n), "$n")
@@ -28,7 +28,7 @@ internal class SieveTest {
     }
 
     @Test fun biggishPrimes() {
-        var sieve = Sieve()
+        val sieve = Sieve()
         for (n in listOf(15485867)) {
             Assertions.assertTrue(sieve.isPrime(n), "$n")
         }

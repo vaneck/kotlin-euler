@@ -11,7 +11,8 @@ val problems = listOf(
         ::p6,
         ::p7,
         ::p8,
-        ::p9
+        ::p9,
+        ::p10
 )
 
 fun main(args: Array<String>) {
@@ -20,8 +21,8 @@ fun main(args: Array<String>) {
         println("==========================================")
         println("Euler problem: ${problem.name}")
         var answer: Any = 0
-        var time = measureTimeMillis({answer = problem()})
-        println("Answer to ${problem.name}: ${answer}.")
+        val time = measureTimeMillis({answer = problem()})
+        println("Answer to ${problem.name}: $answer.")
         println("Took ${time}ms.")
     }
 }

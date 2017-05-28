@@ -25,7 +25,7 @@ internal class UtilKtTest {
     }
 
     @Test fun generateSubstrings() {
-        var s = "abcdef"
+        val s = "abcdef"
         assertEquals(listOf("a", "b", "c", "d", "e", "f"), generateSubstrings(s, 1).toList())
         assertEquals(listOf("ab", "bc", "cd", "de", "ef"), generateSubstrings(s, 2).toList())
         assertEquals(listOf("abc", "bcd", "cde", "def"), generateSubstrings(s, 3).toList())
@@ -36,7 +36,7 @@ internal class UtilKtTest {
     }
 
     @Test fun stringProduct() {
-        var s = "1234"
+        val s = "1234"
         assertEquals(listOf(2, 6, 12), generateSubstrings(s, 2).map{ stringProduct(it)}.toList())
     }
 }

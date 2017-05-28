@@ -78,7 +78,7 @@ fun p7(): Int {
 }
 
 fun p8(): Long {
-    var number =
+    val number =
             "73167176531330624919225119674426574742355349194934" +
             "96983520312774506326239578318016984801869478851843" +
             "85861560789112949495459501737958331952853208805511" +
@@ -106,11 +106,11 @@ fun p8(): Long {
  * a*b*c where a^2 + b^2 = c^2, a<b<c and a+b+c=1000
  */
 fun p9(): Long {
-    var epsilon = 0.00001
-    var n = 1000L
+    val epsilon = 0.00001
+    val n = 1000L
     for (a in 2..n) {
         for (b in a+1..n) {
-            var c = 1000-b-a
+            val c = 1000-b-a
             if (Math.abs(Math.sqrt((a * a + b * b).toDouble()) - c) < epsilon) {
                 println("$a, $b, $c")
                 return a*b*c
@@ -118,5 +118,22 @@ fun p9(): Long {
         }
     }
     return 0
+}
+
+/**
+ * Sum of all the primes below two million.
+ */
+fun p10(): Long {
+    val max = 2_000_000
+    val sieve = Sieve()
+    sieve.size = max
+    var acc = 0L
+    /* Unfortunately there is no sumByLong in Kotlin :( */
+    for (i in 2..max) {
+        if (sieve.isPrime(i)) {
+            acc += i
+        }
+    }
+    return acc
 }
 

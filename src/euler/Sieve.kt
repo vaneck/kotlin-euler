@@ -17,7 +17,7 @@ package euler
  *
  */
 class Sieve {
-    var _sieve = MutableList<Boolean>(0, {false})
+    var _sieve = MutableList(0, {false})
     var size = 0
         set(value) {
             _resize(value)
@@ -32,7 +32,7 @@ class Sieve {
      *
      */
     fun _filter() {
-        for ((i, value) in _sieve.withIndex()) {
+        for ((i, value) in _sieve.slice(0..Math.sqrt(_sieve.size.toDouble()).toInt()).withIndex()) {
             if (i < 2) {
                 _sieve[i] = false
                 continue

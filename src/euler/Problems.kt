@@ -23,8 +23,8 @@ fun p3(): Long {
 
 fun p4(): Long {
     val palindromes: MutableList<Long> = mutableListOf()
-    for (n in 100L..999L) {
-        for (m in n..999L) {
+    for (n in 999L downTo 100L) {
+        for (m in 999L downTo n) {
             val product = n*m
             if (isPalindrome(product.toString())) {
                palindromes.add(product)
@@ -35,12 +35,30 @@ fun p4(): Long {
 }
 
 fun p5(): Long {
+    /**
+     * If a number is divisible by 2..20 inclusive, the primes in this range
+     * are in its factorization:
+     *
+     *   2^a * 3^b * 5^c * 7^d * 11^e * 13^f * 17^g * 19^h
+     *
+     * Moreover, exponents a..h must match the ones for the greater power of the
+     * number in question in the range:
+     *
+     *   2^4 * 3^2 * 5 * 7 * 11 * 13 * 17 * 19
+     *
+     * 2^4 is 16 and 3^2 is 9 - all other higher powers are above 20.
+     *
+     * Thus the answer is...
+     */
+    return (2*2*2*2*3*3*5*7*11*13*17*19).toLong()
+
+    /* Old solution
     for (n: Long in generateSequence(6L, { it + 6L })) {
         if ((4..20).all({ n.rem(it) == 0L })) {
             return n
         }
     }
-    return 0
+    */
 }
 
 /**
@@ -59,8 +77,9 @@ fun p7(): Int {
     return nthPrime(10001)
 }
 
-fun p8(): Int {
-    var number = "73167176531330624919225119674426574742355349194934" +
+fun p8(): Long {
+    var number =
+            "73167176531330624919225119674426574742355349194934" +
             "96983520312774506326239578318016984801869478851843" +
             "85861560789112949495459501737958331952853208805511" +
             "12540698747158523863050715693290963295227443043557" +
@@ -79,8 +98,7 @@ fun p8(): Int {
             "07198403850962455444362981230987879927244284909188" +
             "84580156166097919133875499200524063689912560717606" +
             "05886116467109405077541002256983155200055935729725" +
-            "7163626956188267042825248360082325753042075296345"
-    // return allSubstrings(number, 13).map(Int).sum()
-    return 0
+            "71636269561882670428252483600823257530420752963450"
+    return generateSubstrings(number, 13).map{stringProduct(it)}.max() ?: 0
 }
 

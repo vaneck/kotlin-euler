@@ -75,7 +75,7 @@ fun generateSubstrings(s: String, substringLength: Int): Sequence<String> = buil
  * Multiplies digits in a string together.
  * e.g. "123" -> 6
  */
-fun stringProduct(l: String): Int {
-    return l.map{it.toString().toInt()} // char's toInt() returns ascii value.
+fun stringProduct(l: String): Long {
+    return l.map{it.toString().toLong()} // char's toLong() returns ascii value.
            .reduce {n1, n2 -> n1 * n2}
 }

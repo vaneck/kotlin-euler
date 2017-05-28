@@ -102,3 +102,21 @@ fun p8(): Long {
     return generateSubstrings(number, 13).map{stringProduct(it)}.max() ?: 0
 }
 
+/**
+ * a*b*c where a^2 + b^2 = c^2, a<b<c and a+b+c=1000
+ */
+fun p9(): Long {
+    var epsilon = 0.00001
+    var n = 1000L
+    for (a in 2..n) {
+        for (b in a+1..n) {
+            var c = 1000-b-a
+            if (Math.abs(Math.sqrt((a * a + b * b).toDouble()) - c) < epsilon) {
+                println("$a, $b, $c")
+                return a*b*c
+            }
+        }
+    }
+    return 0
+}
+

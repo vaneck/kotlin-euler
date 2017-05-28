@@ -10,7 +10,8 @@ val problems = listOf(
         ::p5,
         ::p6,
         ::p7,
-        ::p8
+        ::p8,
+        ::p9
 )
 
 fun main(args: Array<String>) {
